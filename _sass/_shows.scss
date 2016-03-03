@@ -1,0 +1,68 @@
+#upcoming-shows {
+  padding-top: $base-spacing*3;
+}
+
+.upcoming-show {
+  background: white;
+  box-shadow: 0px 1px 8px rgba(0,0,0,0.3);
+  margin: $base-spacing*2 0;
+  display: table;
+  width: 100%;
+
+  .date, .content {
+    display: table-cell;
+    padding: $base-spacing*2;
+    vertical-align: middle;
+  }
+
+  .date {
+    max-width: 192px;
+    width: 192px;
+    background-color: $blue;
+    color: white;
+    text-align: center;
+    font-family: $headings-font-family;
+    
+    .month, .date-num, .day-name {
+      padding: $base-spacing 0;
+    }
+
+    .month {
+      font-size: 24px;
+      line-height: 24px;
+      text-transform: uppercase;
+      display: block;
+    }
+    .date-num {
+      font-size: 68px;
+      line-height: 52px;
+      font-weight: 700;
+      border-top: 1px solid white;
+      border-bottom: 1px solid white;
+      display: inline-block;
+    }
+    .day-name {
+      display: block;
+      line-height: 14px;
+      font-size: 14px;
+    }
+  }
+
+  .content {
+    h2 {
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 24px;
+    }
+    .secondary-info {
+      font-family: $headings-font-family;
+      font-size: 14px;
+      margin-bottom: 24px;
+    }
+    p { 
+      margin-bottom: 0;
+    }
+
+  }
+}

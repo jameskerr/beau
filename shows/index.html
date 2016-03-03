@@ -1,0 +1,33 @@
+---
+layout: default
+---
+
+<div class="shows">
+  <header>
+    <div class="outer-container">
+      <h1><span>Shows</span></h1>
+    </div>
+  </header>
+
+  <div id="upcoming-shows">
+    <p>Looking up shows...</p>
+  </div>
+
+  <script id="show-template" type="text/template">    
+    <div class="date">
+      <span class="month"><%= month %></span>
+      <span class="date-num"><%= dateNum %></span>
+      <span class="day-name"><%= dayName %></span>
+      <div class="lines"></div>
+    </div>
+
+    <div class="content">
+      <h2><%= title %></h2>
+      <p class="secondary-info">
+        <strong><%= time %></strong> | <%= cost %></br>
+        <a href="#"><%= location %></a>
+      </p>
+      <p><%= description %></p>
+    </div>
+  </script>
+</div>
