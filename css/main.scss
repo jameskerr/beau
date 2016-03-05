@@ -2,9 +2,6 @@
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
 
-// @import 'bourbon';
-// @import 'neat';
-
 @charset "utf-8";
 
 
@@ -49,7 +46,9 @@ $max-width:    720px;
 }
 
 @mixin outer-container {
-  
+  width: $max-width;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 // Import partials from `sass_dir` (defaults to `_sass`)
