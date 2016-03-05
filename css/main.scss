@@ -1,6 +1,10 @@
 ---
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
+
+@import 'bourbon';
+@import 'neat';
+
 @charset "utf-8";
 
 
@@ -48,8 +52,6 @@ $max-width:    720px;
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
-        "bourbon",
-        "neat",
         "base",
         "layout",
         "shows"
