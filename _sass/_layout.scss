@@ -44,9 +44,10 @@
 header {
   background-size: cover;
   background-color: black;
-  padding: $base-spacing*4 0 $base-spacing 0;
+  padding: $base-spacing*6 0 $base-spacing 0;
   margin: 0 0 $base-spacing;
   text-align: right;
+  @include box-shadow;
 
   h1 {
     text-align: right;
@@ -86,6 +87,11 @@ header {
   background-position: center center;
 }
 
+.contact header {
+  background-image: url('/img/beau_mcfarland_ireland.jpg');
+  background-position: center 27%;
+}
+
 /////////////////////////////////////////
 
 .home {
@@ -118,8 +124,26 @@ header {
   @include outer-container;
   margin-top: $base-spacing * 4;
   margin-bottom: $base-spacing * 4;
+  min-height: 300px
 }
 
-#upcoming-shows {
-  @include outer-container;
+.site-footer {
+  @include box-shadow;
+  background-color: $black;
+  color: white;
+  font-family: $headings-font-family;
+  padding: $base-spacing;
+  text-align: center;
+  .footer-content {
+    @include outer-container;
+  }
+  a { 
+    color: white; 
+    text-decoration: none;
+  }
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
 }

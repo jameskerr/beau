@@ -1,7 +1,4 @@
-#photos {
-  @include outer-container;
-  padding-top: $base-spacing * 4;
-  
+#photos {  
   .photo {
     @include box-shadow;
     display: block;

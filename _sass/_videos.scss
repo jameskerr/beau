@@ -1,8 +1,3 @@
-#videos {
-  @include outer-container;
-  padding-top: $base-spacing*3;
-}
-
 .video-card {
   background: white;
   margin: $base-spacing*2 0;
