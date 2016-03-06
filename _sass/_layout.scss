@@ -124,8 +124,9 @@ header {
   @include outer-container;
   margin-top: $base-spacing * 4;
   margin-bottom: $base-spacing * 4;
-  min-height: 300px
 }
+
+
 
 .site-footer {
   @include box-shadow;
