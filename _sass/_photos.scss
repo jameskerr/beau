@@ -1,0 +1,16 @@
+#photos {
+  @include outer-container;
+  padding-top: $base-spacing * 4;
+  
+  .photo {
+    @include box-shadow;
+    display: block;
+    margin-bottom: $base-spacing*4;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}

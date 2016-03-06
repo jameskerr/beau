@@ -1,0 +1,21 @@
+---
+layout: default
+---
+
+<main class="videos">
+  <header>
+    <div class="outer-container">
+      <h1><span>Videos</span></h1>
+    </div>
+  </header>
+
+  <script type="text/template" id="video-template">
+    <h2><%= title %></h2>
+    <div class="video-wrapper">
+      <iframe width="100%" src="https://www.youtube.com/embed/<%= youtube_id %>?showinfo=0" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </script>
+
+  <div id="videos">Loading videos...</div>
+
+</main>

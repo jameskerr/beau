@@ -1,0 +1,31 @@
+---
+layout: default
+photos:
+  - /img/beau_mcfarland_winery.jpg
+  - /img/beau_mcfarland_priest.jpg
+  - /img/beau_mcfarland_austin.jpg
+  - /img/beau_mcfarland_blader.jpg
+  - /img/beau_mcfarland_boom.jpg
+  - /img/beau_mcfarland_brea.jpg
+  - /img/beau_mcfarland_headshot.jpg
+  - /img/beau_mcfarland_ice_house.jpg
+  - /img/beau_mcfarland_side.jpg
+  - /img/beau_mcfarland_cakeface.jpg
+  - /img/beau_mcfarland_comedy_store.jpg
+  - /img/beau_mcfarland_ireland.jpg
+  - /img/beau_mcfarland_flappers.jpg
+  - /img/beau_mcfarland_laugh_factory.jpg
+  - /img/beau_mcfarland_the_good.jpg
+---
+
+<main class="photos">
+  <header>
+    <h1><span>Photos</span></h1>
+  </header>
+  
+  <div id="photos">
+  {% for photo in page.photos %}
+    <a href="{{photo}}" class="photo"><img src="{{photo}}"/></a>
+  {% endfor %}
+  </div>
+</main>
