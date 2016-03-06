@@ -46,14 +46,20 @@ $max-width:    720px;
 }
 
 @mixin outer-container {
-  width: $max-width;
+  max-width: $max-width;
   margin-left: auto;
   margin-right: auto;
+}
+
+@mixin box-shadow {
+  box-shadow: 0px 1px 8px rgba(0,0,0,0.3);
 }
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
         "base",
         "layout",
-        "shows"
+        "shows",
+        "videos",
+        "photos"
 ;

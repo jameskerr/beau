@@ -19,6 +19,8 @@
  * BACKBONE FOR SHOWS PAGE
  */
 
+
+
 var Show = Backbone.Model.extend({
   defaults: {
     title       : '',
@@ -42,7 +44,7 @@ var Show = Backbone.Model.extend({
 var ShowView = Backbone.View.extend({
   tagName: 'article',
   className: 'upcoming-show',
-  template: _.template($("#show-template").html()),
+  template: _.template($("#show-template").html() || ""),
   initialize: function() {
     this.render();
   },
@@ -69,34 +71,99 @@ var UpcomingShowsView = Backbone.View.extend({
 });
 
 
+/**
+ * BACKBONE FOR VIDEOS
+ */
+
+var Video = Backbone.Model.extend({
+  defaults: {
+    link: '',
+    title: ''
+  },
+  serialize: function() {
+    var j = this.toJSON();
+    j.youtube_id = j.link.split('watch?v=')[1];
+    return j;
+  }
+});
+
+var VideoView = Backbone.View.extend({
+  tagName: 'article',
+  className: 'video-card',
+  template: _.template($('#video-template').html() || ''),
+  initialize: function() {
+    this.render();
+  },
+  render: function() {
+    this.$el.html(this.template(this.model.serialize()));
+    return this;
+  }
+});
+
+var VideosView = Backbone.View.extend({
+  el: $("#videos"),
+  initialize: function() {
+    this.render();
+  },
+  render: function() {
+    this.$el.empty();
+    this.collection.forEach(function(video) {
+      var model = new Video(video);
+      var view  = new VideoView({model: model});
+      this.$el.append(view.el);
+    },this);
+    return this;
+  }
+})
+
 
 /**
  * Shows Application Specific Code
  */
 
-var ShowsApp = {
-  googleSheetsId: "1893GwMuuJSm0fAEfuMYuY3o0SjUypswuRMkhy7Cdt58",
-  container:      "#upcoming-shows"
+var App = {
+  googleSheetsId: "1893GwMuuJSm0fAEfuMYuY3o0SjUypswuRMkhy7Cdt58"
 };
 
-ShowsApp.initialize = function() {
+App.onPage = function(name) {
+  return $('main.'+name).length === 1;
+}
+
+App.initialize = function() {
+  if (App.onPage('shows')){
+    Shows.initialize();
+  }
+  else if (App.onPage('videos')){
+    Videos.initialize();
+  }
+}
+
+App.getSpreadsheetData = function(callback) {
   Tabletop.init({
-    key:         this.googleSheetsId,
-    callback:    this.receiveData,
-    simpleSheet: true 
+    key:      App.googleSheetsId,
+    callback: callback
   });
+}
+
+var Shows = {};
+
+Shows.initialize = function() {
+  App.getSpreadsheetData(function(data) {
+    new UpcomingShowsView({ collection: data.shows.elements });
+  })
 };
 
-ShowsApp.receiveData = function(data, tabletop) {
-  new UpcomingShowsView({
-    collection: data
-  });
-};
+var Videos = {};
 
+Videos.initialize = function() {
+  App.getSpreadsheetData(function(data) {
+    new VideosView({ collection: data.videos.elements });
+  })
+};
 
 /**
  * Main Execution
  */
 
-ShowsApp.initialize();
+App.initialize();
 

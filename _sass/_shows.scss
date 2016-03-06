@@ -4,7 +4,7 @@
 
 .upcoming-show {
   background: white;
-  box-shadow: 0px 1px 8px rgba(0,0,0,0.3);
+  @include box-shadow;
   margin: $base-spacing*2 0;
   display: table;
   width: 100%;

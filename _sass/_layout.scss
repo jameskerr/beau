@@ -50,13 +50,14 @@ header {
 
   h1 {
     text-align: right;
-    line-height: $base-font-size *4;
+    line-height: 1;
     font-size: $base-font-size * 4;
     @include outer-container;
     color: white;
     font-weight: 100;
     span {
       padding: $base-spacing;
+      padding-bottom: $base-spacing/2;
       display: inline-block;
       background-color: $black;
       margin-bottom: $base-spacing;
@@ -73,6 +74,16 @@ header {
 .shows header {
   background-image: url('/img/beau_mcfarland_the_good.jpg');
   background-position: left 20%;
+}
+
+.videos header {
+  background-image: url('/img/beau_mcfarland_boom.jpg');
+  background-position: center 40%;
+}
+
+.photos header {
+  background-image: url('/img/beau_mcfarland_laugh_factory.jpg');
+  background-position: center center;
 }
 
 /////////////////////////////////////////
