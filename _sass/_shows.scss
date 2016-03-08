@@ -4,16 +4,22 @@
   margin: $base-spacing*2 0;
   display: table;
   width: 100%;
+  table-layout: fixed;
 
-  .date, .content {
+  .date, .show-info {
     display: table-cell;
     padding: $base-spacing*2;
-    vertical-align: middle;
+    vertical-align: top;
+    @include media-query($on-palm) {
+      padding: $base-spacing;
+    }
   }
 
   .date {
-    max-width: 192px;
-    width: 192px;
+    width: 25%;
+    @include media-query($on-palm) {
+      width: 35%;
+    }
     background-color: $black;
     color: white;
     text-align: center;
@@ -44,7 +50,7 @@
     }
   }
 
-  .content {
+  .show-info {
     h2 {
       font-size: 42px;
       font-weight: 700;

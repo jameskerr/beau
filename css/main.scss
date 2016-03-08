@@ -21,14 +21,12 @@ $spacing-unit:     30px;
 
 $text-color:       $black;
 $background-color: #fdfdfd;
-$brand-color:      #2a7ae2;
-
-$grey-color:       #828282;
-$grey-color-light: lighten($grey-color, 40%);
-$grey-color-dark:  darken($grey-color, 25%);
+$brand-color:      $blue;
 
 // Width of the content area
-$max-width:    720px;
+$max-width: 720px;
+$on-tablet: 720px;
+$on-palm:   490px;
 
 
 // Use media queries like this:
@@ -58,6 +56,7 @@ $max-width:    720px;
 @import
         "base",
         "layout",
+        "home",
         "shows",
         "videos",
         "photos",

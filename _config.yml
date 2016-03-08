@@ -7,14 +7,11 @@
 
 # Site settings
 title: G. Beau McFarland
-email: your-email@domain.com
+email: gbeaumcfarland@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   G. Beau McFarland is an American stand-up comic, writer, 
   actor, and Nutella-lover, originally from Southern California.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://yourdomain.com" # the base hostname & protocol for your site
-twitter_username: jekyllrb
-github_username:  jekyll
+url: "http://gbeaumcfarland.com" # the base hostname & protocol for your site
 
 # Build settings
 markdown: kramdown

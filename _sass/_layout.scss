@@ -8,6 +8,7 @@
   position: relative;
   margin: 0;
   padding: 0;
+
   ul {
     list-style-type: none;
     margin: 0;
@@ -32,10 +33,65 @@
     }
   }
 
+  .menu-icon {
+    display: none;
+  }
+
+  .close-icon {
+    display: none;
+  }
+
   .twitter-button {
     position: absolute;
     right: $base-spacing;
     top: 6px;
+  }
+
+  @include media-query($on-palm) {
+
+    .menu-icon, .close-icon {
+      float: left;
+      height: 45px;
+      width: auto;
+    }
+
+    .menu-icon {
+      display: block;
+    }
+
+    &.open .close-icon {
+      display: block;
+      position: relative;
+      z-index: 999;
+    }
+
+    &.open .menu-icon {
+      display: none;
+    }
+
+
+
+    ul {
+      display: none;
+      padding-top: 45px;
+      position: fixed;
+      z-index: 888;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      background: rgba(red($black),green($black),blue($black), 0.95);
+    }
+    li a {
+      display: block;
+      width: 100%;
+      font-size: $base-font-size*2;
+      line-height: 2;
+    }
+  }
+
+  &.open ul {
+    display: block;
   }
 }
 
@@ -50,83 +106,64 @@ header {
   @include box-shadow;
 
   h1 {
+    @include outer-container;
     text-align: right;
     line-height: 1;
     font-size: $base-font-size * 4;
-    @include outer-container;
     color: white;
     font-weight: 100;
+    @include media-query($on-palm) {
+      font-size: $base-font-size * 3;
+    }
+    @include media-query($on-tablet) {
+      margin-right: $base-spacing;
+    }
+
+
     span {
       padding: $base-spacing;
       padding-bottom: $base-spacing/2;
       display: inline-block;
-      background-color: $black;
+      background-color: rgba(red($black), green($black), blue($black), 0.9);
       margin-bottom: $base-spacing;
     }
   }
 }
 
 .home header {
-  background-image: url('/img/beau_mcfarland_headshot.jpg');
+  background-image: url('/img/photos/beau_mcfarland_headshot.jpg');
   height: 500px;
   background-position: center 88%;
 }
 
 .shows header {
-  background-image: url('/img/beau_mcfarland_the_good.jpg');
+  background-image: url('/img/photos/beau_mcfarland_the_good.jpg');
   background-position: left 20%;
 }
 
 .videos header {
-  background-image: url('/img/beau_mcfarland_boom.jpg');
+  background-image: url('/img/photos/beau_mcfarland_boom.jpg');
   background-position: center 40%;
 }
 
 .photos header {
-  background-image: url('/img/beau_mcfarland_laugh_factory.jpg');
+  background-image: url('/img/photos/beau_mcfarland_laugh_factory.jpg');
   background-position: center center;
 }
 
 .contact header {
-  background-image: url('/img/beau_mcfarland_ireland.jpg');
+  background-image: url('/img/photos/beau_mcfarland_ireland.jpg');
   background-position: center 27%;
 }
 
 /////////////////////////////////////////
 
-.home {
-  .heading {
-    text-align: center;
-    background-color: rgba(0,0,0,0.6);
-    color: white;
-    padding: $base-spacing * 4;
-
-    .circle {
-      width: 96px;
-      height: 96px;
-      margin: 0 auto;
-      background-color: white;
-      border-radius: 50%;
-    }
-
-    h2 {
-      font-size: $base-font-size * 3;
-      line-height: 1;
-      font-weight: 100;
-      margin-top: $base-spacing;
-      margin-bottom: 0;
-
-    }
-  }
-}
-
 .content {
   @include outer-container;
+  padding: 0 $base-spacing;
   margin-top: $base-spacing * 4;
   margin-bottom: $base-spacing * 4;
 }
-
-
 
 .site-footer {
   @include box-shadow;

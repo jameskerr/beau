@@ -1,0 +1,43 @@
+.home {
+  .heading {
+    background: transparent;
+    background-repeat: no-repeat;
+    text-align: center;
+    color: white;
+    padding: $base-spacing * 4;
+    position: relative;
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      
+
+      background-color: rgba(0,0,0,0.6);
+    }
+
+    .circle, h2 {
+      position: relative;
+      z-index: 1;
+    }
+
+    .circle {
+      width: 96px;
+      height: 96px;
+      margin: 0 auto;
+      background-color: white;
+      border-radius: 50%;
+    }
+
+    h2 {
+      font-size: $base-font-size * 3;
+      line-height: 1;
+      font-weight: 100;
+      margin-top: $base-spacing;
+      margin-bottom: 0;
+
+    }
+  }
+}

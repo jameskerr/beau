@@ -27,6 +27,7 @@ var Show = Backbone.Model.extend({
     date        : '',
     time        : '',
     location    : '',
+    address     : '',
     cost        : '',
     description : '' 
   },
@@ -129,13 +130,24 @@ App.onPage = function(name) {
   return $('main.'+name).length === 1;
 }
 
+App.listen = function() {
+  $('.menu-icon').on('click', function() {
+    $('.nav-bar').addClass('open');
+  });
+  $('.close-icon').on('click', function() {
+    $('.nav-bar').removeClass('open');
+  });
+}
+
 App.initialize = function() {
+  App.listen();
   if (App.onPage('shows')){
     Shows.initialize();
   }
   else if (App.onPage('videos')){
     Videos.initialize();
   }
+
 }
 
 App.getSpreadsheetData = function(callback) {
